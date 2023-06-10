@@ -1,0 +1,45 @@
+import React, { useState } from 'react';
+
+export default function SimpleSelect() {
+  const [data, setData] = useState({
+    name: "",
+    age: "",
+    child: {
+      childname: "",
+      age: ""
+    }
+  });
+
+  console.log(data, "data");
+
+  return (
+    <div>
+      <input
+        value={data.name}
+        onChange={(e) => setData({ ...data, name: e.target.value })}
+      />
+      <input
+        value={data.age}
+        onChange={(e) => setData({ ...data, age: e.target.value })}
+      />
+      <input
+        value={data.child.childname}
+        onChange={(e) =>
+          setData({
+            ...data,
+            child: { ...data.child, childname: e.target.value }
+          })
+        }
+      />
+      <input
+        value={data.child.age}
+        onChange={(e) =>
+          setData({
+            ...data,
+            child: { ...data.child, age: e.target.value }
+          })
+        }
+      />
+    </div>
+  );
+}
