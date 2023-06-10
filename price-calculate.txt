@@ -1,0 +1,120 @@
+import React, { useState } from "react";
+
+export default function Demo() {
+  const [seatNo, setSeatNo] = useState(1);
+  const [price, setPrice] = useState(100);
+  const [age, setAge] = useState(2);
+  const [ageone, setAgeone] = useState(4);
+  const [agetwo, setAgetwo] = useState(5);
+  const [agethree, setAgethree] = useState(8);
+
+ 
+  
+  function calculateTotalf(age, ageone, agetwo, agethree, price) {
+    let total = 0;
+  if(seatNo===1){
+    if (age < 12) {
+      total += price * 0.5;
+    } else {
+      total += price;
+    }
+  }
+  else if(seatNo===2){
+    if (age < 12) {
+      total += price * 0.5;
+    } else {
+      total += price;
+    }
+    if (ageone < 12) {
+      total += price * 0.5;
+    } else {
+      total += price;
+    }
+  }
+  else if(seatNo===3){
+    if (age < 12) {
+      total += price * 0.5;
+    } else {
+      total += price;
+    }
+    if (ageone < 12) {
+      total += price * 0.5;
+    } else {
+      total += price;
+    }
+    if (agetwo < 12) {
+      total += price * 0.5;
+    } else {
+      total += price;
+    }
+  }
+  else{
+    if (age < 12) {
+      total += price * 0.5;
+    } else {
+      total += price;
+    }
+    if (ageone < 12) {
+      total += price * 0.5;
+    } else {
+      total += price;
+    }
+    if (agetwo < 12) {
+      total += price * 0.5;
+    } else {
+      total += price;
+    }
+    if (agethree < 12) {
+      total += price * 0.5;
+    } else {
+      total += price;
+    }
+  }
+    return total;
+  }
+  const total = calculateTotalf(age, ageone, agetwo, agethree, price);
+
+  return (
+    <div style={{display:'flex',flexDirection:'column',gap:'15px'}}>
+      <input
+        type="text"
+        value={age}
+        onChange={(e) => setAge(e.target.value)}
+        placeholder="Enter age"
+      />
+      <input
+        type="text"
+        value={ageone}
+        onChange={(e) => setAgeone(e.target.value)}
+        placeholder="Enter ageone"
+      />
+      <input
+        type="text"
+        value={agetwo}
+        onChange={(e) => setAgetwo(e.target.value)}
+        placeholder="Enter agetwo"
+      />
+      <input
+        type="text"
+        value={agethree}
+        onChange={(e) => setAgethree(e.target.value)}
+        placeholder="Enter agethree"
+      />
+      <input
+        type="text"
+        value={seatNo}
+        onChange={(e) => setSeatNo(e.target.value)}
+        placeholder="Enter seat number"
+      />
+      <input
+        type="text"
+        value={price}
+        onChange={(e) => setPrice(e.target.value)}
+        placeholder="Enter price"
+      />
+         <p>total:{total}</p>
+     
+
+    </div>
+  );
+}
